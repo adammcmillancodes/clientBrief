@@ -8,6 +8,9 @@ axios.get("https://cors-anywhere.herokuapp.com/api.indeed.com/ads/apisearch", {
     v: 2,
     format: "json",
     q: "Front End Web Developer",
+    l: "Toronto",
+    co: "CA",
+    sort: "date",
     limit: 25
   }
 })

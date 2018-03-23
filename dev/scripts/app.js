@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-// import JobSearch from 'jobSearch.js';
+import JobSearch from './JobSearch';
 // import {
 //   BrowserRouter as Router,
 //   Route, Link
@@ -61,17 +61,13 @@ class App extends React.Component {
               <input onChange={this.handleChange} value={this.state.jobLocation} type="text" title="jobLocation" id="jobLocations" className="jobLocation" placeholder="Job Location"/>
               <button type="submit" className="submit">Submit</button>
             </form>
-            <div>
-              {this.state.jobListing.map((job, i) => {
-                return (
-                  <div key={job.jobkey}>
-                    <a href={job.url} target="_blank"><h2>{job.jobtitle}</h2></a>
-                    <h3>{job.city}</h3> 
-                    <p>{job.snippet}</p>
-                  </div>
-                )
-              })}
-            </div>
+            {this.state.jobListing.map((job, i) => {
+                      return (
+
+                        <JobSearch job={job} />
+                          
+                      )
+                  })}
           </main>
         </div>
       )
